@@ -1,0 +1,228 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('your-background-image.jpg'); /* Add your image path */
+    background-size: cover; /* Ensure the image covers the entire background */
+    background-position: center; /* Center the image */
+    margin: 0;
+    padding: 0;
+    color: #f0f0f0; /* Light text color for dark background */
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    opacity: 0; /* Start hidden */
+    animation: fadeIn 1s ease forwards; /* Fade in effect */
+}
+
+h1 {
+    color: #4e4c4c; /* Light color for headings */
+    margin: 20px 0;
+    animation: fadeIn 1s ease;
+    transition: transform 0.3s ease; /* Add transition for zoom effect */
+    text-shadow: 0 0 5px rgba(157, 29, 29, 0.8), 
+                 0 0 10px rgba(250, 251, 250, 0.5), 
+                 0 0 15px rgba(0, 255, 0, 0.3); /* Glowing effect */
+}
+
+h1:hover {
+    transform: scale(1.05); /* Zoom in on hover */
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.left {
+    background: rgba(50, 50, 50, 0.8); /* Darker background for left container */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.6);
+    flex: 0 0 30%; /* 30% width */
+    margin-right: 10px; /* Right margin */
+    margin-left: -30px; /* Negative left margin to move it left */
+    transition: transform 0.3s ease; /* Add transition for zoom effect */
+}
+
+.right {
+    background: rgba(50, 50, 50, 0.8); /* Darker background for right container */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.6);
+    flex: 0 0 70%; /* 70% width */
+    margin-left: 10px;
+    height: 550px; /* Set a fixed height for the right container */
+    overflow-y: auto; /* Allow scrolling if content overflows */
+    transition: transform 0.3s ease; /* Add transition for zoom effect */
+}
+
+.left:hover, .right:hover {
+    transform: scale(1.03); /* Zoom in on hover */
+}
+
+.script-selection {
+    margin: 10px 0;
+}
+
+.script-btn {
+    background-color: #c3551e; /* Bright button color */
+    color: #ffffff; /* White text on buttons */
+    border: none;
+    padding: 10px 15px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease; /* Add box-shadow transition */
+}
+
+.script-btn:hover {
+    background-color: #060ef1; /* Change color on hover */
+    transform: scale(1.05);
+}
+
+.script-btn.active {
+    background-color: #3adc09; /* Active button color */
+}
+
+label {
+    display: block;
+    margin: 15px 0 5px;
+    transition: transform 0.3s ease; /* Add transition for zoom effect */
+    color: #f0f0f0; /* Light color for labels */
+}
+
+label:hover {
+    transform: scale(1.05); /* Zoom in on hover */
+}
+
+input[type="file"], textarea {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #555; /* Darker border for inputs */
+    background-color: #333; /* Dark background for inputs */
+    color: #f0f0f0; /* Light text for inputs */
+    transition: border-color 0.3s ease, transform 0.3s ease; /* Add transition for zoom effect */
+}
+
+input[type="file"]:hover, textarea:hover {
+    border-color: #007bff;
+}
+
+progress {
+    width: 100%;
+    height: 20px;
+    border-radius: 5px;
+    appearance: none;
+}
+
+progress::-webkit-progress-bar {
+    background-color: #555; /* Dark progress bar */
+    border-radius: 5px;
+}
+
+progress::-webkit-progress-value {
+    background-color: #007bff; /* Bright progress value */
+    border-radius: 5px;
+}
+
+#loader {
+    display: none; /* Hide by default */
+    position: fixed; /* Fix position */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Center the loader */
+    z-index: 1000; /* Ensure it is above other content */
+    width: 200px;
+    height: 200px;
+}
+
+#loader img {
+    width: 150px;
+    height: 150px;
+    /* Remove rotation animation */
+}
+
+.left-textarea {
+    margin-top: 10px;
+    resize: none; /* Prevents resizing */
+    background-color: rgba(50, 50, 50, 0.9); /* Dark background for textareas */
+    border: 1px solid #555; /* Dark border for textareas */
+    border-radius: 5px;
+    transition: border-color 0.3s ease, transform 0.3s ease; /* Add transition for zoom effect */
+    color: #f0f0f0; /* Light text for textareas */
+    height: 150px;
+}
+
+.right-textarea {
+    margin-top: 10px;
+    resize: none; /* Prevents resizing */
+    background-color: rgba(50, 50, 50, 0.9); /* Dark background for textareas */
+    border: 1px solid #555; /* Dark border for textareas */
+    border-radius: 5px;
+    transition: border-color 0.3s ease, transform 0.3s ease; /* Add transition for zoom effect */
+    color: #f0f0f0; /* Light text for textareas */
+    height: 350px;
+}
+
+.left-textarea:focus, .right-textarea:focus {
+    border-color: #007bff;
+}
+
+.left-textarea:hover, .right-textarea:hover {
+    transform: scale(1.02); /* Zoom in on hover */
+}
+
+button {
+    background-color: #28a745; /* Bright button color */
+    color: #ffffff; /* White text on buttons */
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease; /* Add box-shadow transition */
+}
+
+button:hover {
+    background-color: #218838; /* Darker green on hover */
+    transform: scale(1.05);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Add shadow on hover */
+}
+
+#counter {
+    position: fixed; 
+    bottom: 20px; 
+    right: 20px; 
+    background-color: rgba(40, 167, 69, 0.9); /* Semi-transparent green */
+    color: rgb(250, 249, 249); 
+    padding: 10px 15px; 
+    border-radius: 5px; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Slight shadow for depth */
+    font-weight: bold; /* Make text bold */
+    font-size: 16px; /* Adjust font size */
+    display: flex; /* Flex display for center alignment */
+    align-items: center; /* Center vertically */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
